@@ -4,7 +4,7 @@
 The Community Food Sharing and Surplus Reduction Platform aims to connect individuals and organizations to share surplus food, reduce food waste, and help those in need. This platform allows users to contribute, request, and manage food, promoting sustainable living and community support.
 
 ## Live URL:
-- https://food-sharing-website-df55f.web.app/
+- https://food-sharing-c62f5.web.app/
 
 ## Key Features:
 - **User Authentication**: Secure user login and registration using Firebase Authentication.
