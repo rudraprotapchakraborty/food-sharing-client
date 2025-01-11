@@ -53,22 +53,22 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/available-foods"
+          onClick={() => setActiveLink('available-foods')}
+          className={`${activeLink === 'available-foods'
+            ? 'text-orange-500'
+            : darkMode
+              ? 'text-gray-300 hover:text-orange-300'
+              : 'text-gray-700 hover:text-orange-500'
+            } transition-transform duration-200 ease-in-out transform hover:scale-105`}
+        >
+          Available Foods
+        </NavLink>
+      </li>
       {user && (
         <>
-          <li>
-            <NavLink
-              to="/available-foods"
-              onClick={() => setActiveLink('available-foods')}
-              className={`${activeLink === 'available-foods'
-                ? 'text-orange-500'
-                : darkMode
-                  ? 'text-gray-300 hover:text-orange-300'
-                  : 'text-gray-700 hover:text-orange-500'
-                } transition-transform duration-200 ease-in-out transform hover:scale-105`}
-            >
-              Available Foods
-            </NavLink>
-          </li>
           <li>
             <NavLink
               to="/add-food"
