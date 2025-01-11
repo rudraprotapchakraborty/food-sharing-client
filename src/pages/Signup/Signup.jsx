@@ -6,13 +6,15 @@ import SocialLogin from "../shared/SocialLogin";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const Signup = () => {
     const { createUser } = useContext(AuthContext);
+    const { darkMode } = useContext(ThemeContext);
     const [errorMessage, setErrorMessage] = useState("");
     const location = useLocation();
     const navigate = useNavigate();
-    const from = location.state || '/';
+    const from = location.state || "/";
 
     const handleSignup = async (e) => {
         e.preventDefault();
@@ -50,7 +52,7 @@ const Signup = () => {
     };
 
     return (
-        <div className="hero bg-base-200 min-h-screen px-4 sm:px-6 lg:px-8">
+        <div className={`hero min-h-screen px-4 sm:px-6 lg:px-8 ${darkMode ? 'bg-gray-900' : 'bg-base-200'}`}>
             <div className="hero-content flex flex-col-reverse lg:flex-row items-center justify-between gap-8">
                 {/* Animation */}
                 <div className="w-full max-w-sm md:max-w-md lg:max-w-lg">
@@ -58,69 +60,81 @@ const Signup = () => {
                 </div>
 
                 {/* Signup Form */}
-                <div className="card bg-base-100 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-sm p-6 shadow-2xl">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center lg:text-left">
+                <div className={`card w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-sm p-6 shadow-2xl ${darkMode ? 'bg-gray-800' : 'bg-base-100'}`}>
+                    <h1 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center lg:text-left ${darkMode ? 'text-white' : 'text-gray-800'}`}>
                         Sign Up now!
                     </h1>
                     <form onSubmit={handleSignup} className="card-body p-0">
                         <div className="form-control mb-4">
                             <label className="label">
-                                <span className="label-text">Name</span>
+                                <span className={`label-text ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                                    Name
+                                </span>
                             </label>
                             <input
                                 type="text"
                                 name="name"
                                 placeholder="Name"
-                                className="input input-bordered"
+                                className={`input input-bordered ${darkMode ? 'bg-gray-700 text-white placeholder-white' : 'placeholder-gray-500'}`}
                                 required
                             />
                         </div>
                         <div className="form-control mb-4">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className={`label-text ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                                    Email
+                                </span>
                             </label>
                             <input
                                 type="email"
                                 name="email"
                                 placeholder="Email"
-                                className="input input-bordered"
+                                className={`input input-bordered ${darkMode ? 'bg-gray-700 text-white placeholder-white' : 'placeholder-gray-500'}`}
                                 required
                             />
                         </div>
                         <div className="form-control mb-4">
                             <label className="label">
-                                <span className="label-text">Photo URL</span>
+                                <span className={`label-text ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                                    Photo URL
+                                </span>
                             </label>
                             <input
                                 type="url"
                                 name="photo"
                                 placeholder="Photo URL"
-                                className="input input-bordered"
+                                className={`input input-bordered ${darkMode ? 'bg-gray-700 text-white placeholder-white' : 'placeholder-gray-500'}`}
                                 required
                             />
                         </div>
                         <div className="form-control mb-4">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className={`label-text ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                                    Password
+                                </span>
                             </label>
                             <input
                                 type="password"
                                 name="password"
                                 placeholder="Password"
-                                className="input input-bordered"
+                                className={`input input-bordered ${darkMode ? 'bg-gray-700 text-white placeholder-white' : 'placeholder-gray-500'}`}
                                 required
                             />
                         </div>
                         {errorMessage && <p className="text-red-500 text-sm">{errorMessage}</p>}
                         <div className="form-control mt-6">
-                            <button className="btn bg-orange-400 text-white w-full">Sign Up</button>
+                            <button className="btn border-none w-full" style={{ backgroundColor: darkMode ? '#F97316' : '#FB923C', color: 'white' }}>
+                                Sign Up
+                            </button>
                         </div>
                         <SocialLogin />
                     </form>
-                    <p className="mt-4 text-center lg:text-left">
+                    <p className={`mt-4 text-center lg:text-left ${darkMode ? 'text-white' : 'text-gray-700'}`}>
                         Already have an account?{" "}
                         <NavLink to="/login">
-                            <span className="text-orange-600 font-semibold">Login.</span>
+                            <span className="font-semibold" style={{ color: darkMode ? '#F97316' : '#FB923C' }}>
+                                Login.
+                            </span>
                         </NavLink>
                     </p>
                 </div>
