@@ -1,28 +1,87 @@
-# Community Food Sharing and Surplus Reduction Platform
+# Food Sharing Website - Client Side
 
-## Purpose:
-The Community Food Sharing and Surplus Reduction Platform aims to connect individuals and organizations to share surplus food, reduce food waste, and help those in need. This platform allows users to contribute, request, and manage food, promoting sustainable living and community support.
+## Overview
+The website is designed to connect individuals and organizations to share surplus food, reduce food waste, and help those in need. This platform enables users to contribute, request, and manage food resources, fostering sustainable living and community support.
 
-## Live URL:
-- https://food-sharing-c62f5.web.app/
+## Screenshot
+![Screenshot](/src/assets/screenshot.png)
 
-## Key Features:
-- **User Authentication**: Secure user login and registration using Firebase Authentication.
+## Technologies Used
+- **Frontend:** React, React Router
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Authentication & Real-Time Data:** Firebase
+- **Other Dependencies:** Cors, Dotenv
+
+## Core Features
+- **User Authentication**: Secure login and registration using Firebase Authentication.
 - **Food CRUD Operations**:
-  - **Create**: Add food items available for sharing, including details like food type, quantity, and expiration date.
-  - **Read**: View available food items and filter by type, quantity, or location.
-  - **Update**: Modify food details (e.g., change quantity or update food status).
-  - **Delete**: Remove food listings when no longer available or after they are shared.
+  - **Create**: Users can add food items with details like type, quantity, and expiration date.
+  - **Read**: Browse available food items and filter them by type, quantity, or location.
+  - **Update**: Modify food details such as quantity or availability status.
+  - **Delete**: Remove food listings when no longer available.
 - **Food Requests**: Users can request food from available listings and manage their requests.
-- **Dynamic User Interface**: Built with React to create a responsive and interactive UI.
-- **Database Management**: MongoDB stores user and food data; Firebase is used for authentication and managing real-time data.
+- **Dynamic UI**: Built with React to ensure a responsive and interactive experience.
+- **Database Management**: MongoDB stores user and food data, while Firebase handles authentication and real-time updates.
 
-## npm Packages Used:
-- **React**: For building the front-end UI.
-- **React Router**: For navigation between pages.
-- **Firebase**: For user authentication and real-time database.
-- **Node.js**: For the back-end API to handle food data and requests.
-- **MongoDB**: For storing food data, user information, and requests.
-- **Express**: For building the back-end server and handling routes.
-- **Cors**: To handle Cross-Origin Resource Sharing in API calls.
-- **dotenv**: For managing environment variables securely.
+## Dependencies
+The following npm packages are used:
+```json
+{
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-router-dom": "^6.10.0",
+    "firebase": "^9.0.0",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.22"
+  }
+}
+```
+
+## How to Run the Project Locally
+### Prerequisites
+Ensure you have the following installed:
+- **Node.js** (v16 or later)
+- **MongoDB** (set up locally or use a cloud instance like MongoDB Atlas)
+- **Firebase Project** (for authentication)
+
+### Steps
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/yourusername/community-food-sharing.git
+   cd community-food-sharing
+   ```
+
+2. **Set Up Environment Variables**
+   Create a `.env` file in the root directory and add:
+   ```env
+   MONGO_URI=your_mongodb_connection_string
+   FIREBASE_API_KEY=your_firebase_api_key
+   ```
+
+3. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+4. **Run the Backend Server**
+   ```bash
+   npm start
+   ```
+
+5. **Run the Frontend**
+   ```bash
+   cd client
+   npm start
+   ```
+
+6. **Access the Application**
+   Open `http://localhost:3000` in your browser.
+
+## Live Project & Resources
+- **Live Project**: [https://food-sharing-5c75a.web.app/](https://food-sharing-5c75a.web.app/)
+- **Backend Repository**: [https://github.com/rudraprotapchakraborty/food-sharing-server](https://github.com/rudraprotapchakraborty/food-sharing-server)
+---
