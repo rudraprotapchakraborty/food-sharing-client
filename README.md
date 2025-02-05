@@ -51,8 +51,8 @@ Ensure you have the following installed:
 ### Steps
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/community-food-sharing.git
-   cd community-food-sharing
+   git clone https://github.com/rudraprotapchakraborty/food-sharing-client.git
+   cd food-sharing-client
    ```
 
 2. **Set Up Environment Variables**
